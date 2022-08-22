@@ -19,8 +19,8 @@ jobs:
           
       - name: Deps
         run: |
-            npm install --global sperm pnpm
-            pnpm i
+            npm install --global sperm
+            npm i
             
       - name: Build plugin
         run: |
