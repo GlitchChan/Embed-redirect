@@ -1,0 +1,7 @@
+{
+  "name": "privacy links",
+  "description": "Changes links in discord to privacy focused ones",
+  "author": "Glitchy#7521",
+  "file": "./index.js",
+  "license": "GPL-V3"
+}
