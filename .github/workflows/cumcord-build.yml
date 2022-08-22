@@ -25,12 +25,6 @@ jobs:
       - name: Build plugin
         run: |
           mkdir .dist
-          if compgen -G "**/*.fsproj" > /dev/null; then
-              dotnet tool restore
-              pnpm deps
-              pnpm build
-            fi
-            
           sperm build
       - name: Copy additional files
         run: |
