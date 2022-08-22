@@ -25,7 +25,7 @@ jobs:
       - name: Build plugin
         run: |
           mkdir .dist
-          sperm build
+          sperm build --outdir ".dist"
       - name: Copy additional files
         run: |
           cp README.md .dist/README.md
