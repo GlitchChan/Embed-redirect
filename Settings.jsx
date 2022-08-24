@@ -7,7 +7,7 @@ setDefaults({
     // "invidiousChangeExistingVideos": true, // This shit is hard
     "enableTwit": true,
     "twitFixInstance": "https://fxtwitter.com",
-    // "twitFixChangeSentLinks": true, // WIP
+    "twitFixChangeSentLinks": true,
 })
 
 const instances = fetch("https://api.invidious.io/instances.json")
