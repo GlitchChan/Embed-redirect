@@ -8,11 +8,12 @@ const Settings = persist.ghost
 
 export default [
     before("sendMessage", MessageModule, args => {
-        if (args[1].content.search('https://twitter.com') !== -1 && Settings.enableTwit && Settings.changeSentMessages) {
-            args[1].content = args[1].content.replace(/\?.\S*/g, () => ''); // Remove Tracking
-            args[1].content.replace(/https:\/\/twitter\.com/g, () => Settings.fxOrVx);
-        } else if (args[1].content.search('https://youtube.com' || 'https://youtu.be') !== -1 && Settings.enableInvidious && Settings.changeSentMessages) {
-            args[1].content.replace(/https:\/\/youtube|youtu.be/g, () => Settings.invidiousInstance);
+        const message = args[1]
+        if(message.content.search('https://twitter.com') !== -1 && Settings.enableTwit && Settings.twitFixChangeSentLinks) {
+            message.content = message.content.replace(/\?.\S*/g, () => '');
+            message.content = message.content.replace(/https:\/\/twitter\.com/g, () => Settings.twitFixInstance);
+        } else if(message.content.search(/https:\/\/youtube|youtu.be/g) !== -1 && Settings.enableInvidious && Settings.invidiousChangeSentLinks){
+            message.content = message.content.replace(/https:\/\/youtube|https:\/\/youtu.be/g, () => Settings.invidiousInstance);
         }
     })
 ]
