@@ -10,8 +10,8 @@ export default [
     after('default', Message, (args, res) => {
         const message = res.props.message
 
-        if (message.content.search(/https:\/\/youtube|https:\/\/youtu.be/g) !== -1 && Settings.invidiousChangeExistingMessages && Settings.enableInvidious) {
-            message.content = message.content.replace(/https:\/\/youtube|https:\/\/youtu.be/g, () => Settings.invidiousInstance)
+        if (message.content.search(/https:\/\/youtube|https:\/\/youtu\.be/g) !== -1 && Settings.invidiousChangeExistingMessages && Settings.enableInvidious) {
+            message.content = message.content.replace(/https:\/\/youtube\.com|https:\/\/youtu\.be/g, () => Settings.invidiousInstance)
         }
 
         if (message.embeds.length >= 1){
