@@ -21,7 +21,7 @@ export default [
                     embed.author.url = embed.author.url.replace("https://www.youtube.com", Settings.invidiousInstance)
                     embed.url = embed.url.replace("https://www.youtube.com", Settings.invidiousInstance)
                     embed.provider.name = "YouTube ➡️ Invidious"
-                    embed.video.url = embed.video.url.replace("https://www.youtube.com", Settings.invidiousInstance).concat("&quality=dash&player_style=youtube")
+                    embed.video.url = embed.video.url.replace("https://www.youtube.com", Settings.invidiousInstance)
                 }
             })
         }
