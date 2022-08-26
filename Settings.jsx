@@ -4,7 +4,7 @@ setDefaults({
     "enableInvidious": true,
     "invidiousInstance": "https://yewtu.be",
     "invidiousChangeSentLinks": false,
-    // "invidiousChangeExistingVideos": true, // This shit is hard
+    "invidiousChangeExistingMessages": true, // This shit is hard
     "enableTwit": true,
     "twitFixInstance": "https://fxtwitter.com",
     "twitFixChangeSentLinks": true,
@@ -23,8 +23,8 @@ export default dependPersist(() => (
         {/*Invidious Options*/}
         <SSwitch k={"enableInvidious"}>Enable Invidious Redirects</SSwitch>
         <SSwitch k={"invidiousChangeSentLinks"} depends={"enableInvidious"}>Change Sent Links</SSwitch>
-        {/*<SSwitch k={"invidiousChangeExistingVideos"} depends={"enableInvidious"}>Change YouTube Embeds</SSwitch>*/}
-        <SSelect k={"invidiousInstance"} depends={"enableInvidious"} options={instance_list}>Invidious Instance</SSelect>
+        <SSwitch k={"invidiousChangeExistingMessages"} depends={"enableInvidious"}>Change YouTube Embeds</SSwitch>
+        <SSelect k={"invidiousInstance"} depends={"enableInvidious"} options={instance_list}>Invidious Instance (You may have to reload for this to fully take effect)</SSelect>
 
         {/*Twitter Options*/}
         <SSwitch k={"enableTwit"}>Enable Twitter Redirects</SSwitch>
