@@ -2,6 +2,18 @@
     Glitchy's Cumcord Plugins
 </h1>
 <h4 align="center">A Collection of all of my <a href="https://cumcord.com">Cumcord</a> Plugins</h4>
+<h1 align="center">
+    <a href="https://liberapay.com/GlitchyChan/donate">
+        <img src="https://img.shields.io/badge/Liberapay-F6C915?style=for-the-badge&logo=liberapay&logoColor=black" alt="liberapay" />
+    </a>
+    <a href="https://discord.gg/ZxbYHEh">
+        <img src="https://img.shields.io/badge/Discord-5865F2?logo=discord&logoColor=fff&style=for-the-badge" alt="Discord" />
+    </a>
+    <a href="https://twitter.com/glitchychan">
+        <img src="https://img.shields.io/badge/twitter-%2300acee?&style=for-the-badge&logo=twitter&logoColor=white" alt="twitter" />
+    </a>
+</h1>
+
 <p align="center">
     <a href="#about">About</a> •
     <a href="#Privacy-Links">Pivacy Links</a> •
