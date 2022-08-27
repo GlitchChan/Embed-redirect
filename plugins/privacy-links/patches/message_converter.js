@@ -4,24 +4,28 @@ import {after} from "@cumcord/patcher";
 
 const Settings = persist.ghost
 const Message = findByProps("MessageAccessories")
+const YouTubeReg = /https:\/\/(.+)?youtube|https:\/\/youtu\.be/g
 
 
 export default [
     after('default', Message, (args, res) => {
         const message = res.props.message
 
-        if (message.content.search(/https:\/\/(.+)?youtube|https:\/\/youtu\.be/g) !== -1 && Settings.invidiousChangeExistingMessages && Settings.enableInvidious) {
-            message.content = message.content.replace(/https:\/\/(.+)?youtube\.com|https:\/\/youtu\.be/g, () => Settings.invidiousInstance)
+        if (message.content.search(YouTubeReg) !== -1 && Settings.invidiousChangeExistingMessages && Settings.enableInvidious) {
+            message.content = message.content.replace(YouTubeReg, () => Settings.invidiousInstance)
         }
 
         if (message.embeds.length >= 1){
             message.embeds.forEach(embed => {
                 if (embed.video && (embed.video.originalURL ? embed.video.originalURL : embed.video.url).includes("youtube") && Settings.invidiousChangeExistingMessages && Settings.enableInvidious) {
-                    if (embed.proivder.url) embed.provider.url = Settings.invidiousInstance
-                    if (embed.author.url) embed.author.url = embed.author.url.replace("https://www.youtube.com", Settings.invidiousInstance)
-                    if (embed.url) embed.url = embed.url.replace("https://www.youtube.com", Settings.invidiousInstance)
-                    if (embed.provider.name) embed.provider.name = "YouTube ➡️ Invidious"
-                    if (embed.video.url) embed.video.url = embed.video.url.replace("https://www.youtube.com", Settings.invidiousInstance)
+                    try{
+                        embed.provider.url = Settings.invidiousInstance
+                        embed.provider.name = "YouTube ➡️ Invidious"
+                        embed.url = embed.url.replace(YouTubeReg, Settings.invidiousInstance)
+                        embed.video.url = embed.video.url.replace(YouTubeReg, Settings.invidiousInstance)
+                        embed.title.url = embed.title.url.replace(YouTubeReg, Settings.invidiousInstance)
+                        embed.author.url = embed.author.url.replace(YouTubeReg, Settings.invidiousInstance)
+                    } catch (e) {}
                 }
             })
         }
