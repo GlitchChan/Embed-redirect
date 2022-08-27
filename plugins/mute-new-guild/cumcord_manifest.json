@@ -1,0 +1,7 @@
+{
+  "name": "Mute New Guild",
+  "description": "Automatically mutes newly joined guilds",
+  "author": "Glitchy#7521",
+  "file": "./index.js",
+  "license": "GPL-V3"
+}
