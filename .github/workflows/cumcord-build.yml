@@ -28,7 +28,7 @@ jobs:
           cd plugins
           for plugin in */; do
             cd "$plugin"
-            sperm build --outdir ".dist"
+            sperm build --outdir "../../.dist/$plugin"
             cd ..
           done
 
