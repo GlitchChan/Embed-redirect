@@ -17,11 +17,11 @@ export default [
         if (message.embeds.length >= 1){
             message.embeds.forEach(embed => {
                 if (embed.video && (embed.video.originalURL ? embed.video.originalURL : embed.video.url).includes("youtube") && Settings.invidiousChangeExistingMessages && Settings.enableInvidious) {
-                    embed.provider.url = Settings.invidiousInstance
-                    embed.author.url = embed.author.url.replace("https://www.youtube.com", Settings.invidiousInstance)
-                    embed.url = embed.url.replace("https://www.youtube.com", Settings.invidiousInstance)
-                    embed.provider.name = "YouTube ➡️ Invidious"
-                    embed.video.url = embed.video.url.replace("https://www.youtube.com", Settings.invidiousInstance)
+                    if (embed.proivder.url) embed.provider.url = Settings.invidiousInstance
+                    if (embed.author.url) embed.author.url = embed.author.url.replace("https://www.youtube.com", Settings.invidiousInstance)
+                    if (embed.url) embed.url = embed.url.replace("https://www.youtube.com", Settings.invidiousInstance)
+                    if (embed.provider.name) embed.provider.name = "YouTube ➡️ Invidious"
+                    if (embed.video.url) embed.video.url = embed.video.url.replace("https://www.youtube.com", Settings.invidiousInstance)
                 }
             })
         }
