@@ -1,5 +1,5 @@
 {
-  "name": "Embed Redirect",
+  "name": "Privacy Links",
   "description": "Changes links in discord to privacy focused ones",
   "author": "Glitchy#7521",
   "file": "./index.js",
