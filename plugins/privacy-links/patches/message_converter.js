@@ -4,7 +4,7 @@ import {after} from "@cumcord/patcher";
 
 const Settings = persist.ghost
 const Message = findByProps("MessageAccessories")
-const YouTubeReg = /https:\/\/(.+)?youtube|https:\/\/youtu\.be/g
+const YouTubeReg = /https?:\/\/(w*)\.?(youtube\.com|youtu\.be)/g
 
 
 export default [
